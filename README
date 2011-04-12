@@ -1,0 +1,24 @@
+You can see the web application up and running in the following URL: http://ernestoreigcv.appspot.com.
+It is, of course, a very small project, but it can be regarded as a base project structure in order to
+develop a large project. I mean, this project could have been made with very low complexity without
+following any design pattern. For example I could have used a small set of php's or html's with a bit of javascript.
+
+It does not make any asynchronous call to the server in order to get data, because the
+complexity is very low and the data that is displayed is static, that is, the data is not retrieved
+from any database in the server and then sent to the client. The data is statically written in the
+code.
+But the thing is that it is ready to be put together with the other layers (or modules) that a
+large project could be composed of, keeping them separated with no dependence. It could be
+regarded as the presentation layer or client module of a large project, and connecting it to the
+server side would be done in a very easy and clean way.
+
+The project honours the Model View Presenter design pattern using the MVP built-in
+framework that comes with GWT. The MVP pattern decouples development in a way that
+allows multiple developers to work simultaneously in a project. For example, a team could be
+working in the server module of the project without affecting the client side and vice versa.
+Moreover, the MVP pattern allows you to implement different views depending on different
+properties. For example the user agent, like a normal desktop web browser or a mobile web
+browser, a view or another will be presented to the user depending on where he/she is
+accessing from. Therefore, different developers could work on different implementations of a
+given view without changing a single line of code of the rest of the application.
+
