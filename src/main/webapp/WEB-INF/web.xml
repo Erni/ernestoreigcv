@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+<!-- 
+  <filter>
+    <filter-name>AuthFilter</filter-name>
+    <description>
+      This filter demonstrates making authentication
+      services visible to a RequestFactory client.
+    </description>
+    <filter-class>es.veratech.linkehr.ie.authrequest.server.AuthFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>AuthFilter</filter-name>
+    <url-pattern>/gwtRequest/*</url-pattern>
+  </filter-mapping>
+  -->
+
+  <!-- Servlets -->
+ <!--  <servlet>
+    <servlet-name>requestFactoryServlet</servlet-name>
+    <servlet-class>com.google.gwt.requestfactory.server.RequestFactoryServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>requestFactoryServlet</servlet-name>
+    <url-pattern>/gwtRequest</url-pattern>
+  </servlet-mapping> -->
+
+
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>Demo.html</welcome-file>
+  </welcome-file-list>
+  <!-- 
+  <security-constraint>
+    <display-name>
+      Redirect to the login page if needed before showing any html pages
+    </display-name>
+    <web-resource-collection>
+      <web-resource-name>Login required</web-resource-name>
+      <url-pattern>/RoBIT.html</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>*</role-name>
+    </auth-constraint>
+  </security-constraint>
+  -->
+  <!-- FORM based authentication -->
+  <!-- 
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+      <form-login-page>/login.html</form-login-page>
+      <form-error-page>/error.html</form-error-page>
+    </form-login-config>
+  </login-config>
+ -->
+</web-app>

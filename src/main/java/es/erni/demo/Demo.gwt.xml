@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="Demo">
+  <!-- this is the base GWT module -->
+  <inherits name='com.google.gwt.user.User'/>
+
+  <!-- setting the ui theme. Choose one from standard, chrome, dark -->
+  <inherits name='com.google.gwt.user.theme.standard.Standard'/>
+
+  <!-- inherits Activity and Place modules -->
+  <inherits name="com.google.gwt.activity.Activity"/>
+  <inherits name="com.google.gwt.place.Place"/>
+
+  <!-- inherits Cell Widgets module -->
+  <!-- <inherits name="com.google.gwt.cell.Cell"/> -->
+
+  <!-- inherits Editors module -->
+  <!-- <inherits name="com.google.gwt.editor.Editor"/> -->
+
+  <!-- inherits GIN module -->
+  <inherits name="com.google.gwt.inject.Inject"/>
+
+  <!-- setting the app entry point -->
+  <entry-point class='es.erni.demo.client.Demo'/>
+</module>
