@@ -89,13 +89,8 @@ public class GinModule extends AbstractGinModule {
   	bind(AdditionalInfoDetailsView.class).to(AdditionalInfoDetailsViewImpl.class).in(Singleton.class);
   	bind(PublicationsTitleView.class).to(PublicationsTitleViewImpl.class).in(Singleton.class);
   	bind(PublicationsDetailsView.class).to(PublicationsDetailsViewImpl.class).in(Singleton.class);
-//    bind(AppLayout.class).to(AppLayoutImpl.class).in(Singleton.class);
-//    bind(ContactDetailView.class).to(ContactDetailViewImpl.class).in(Singleton.class);
-//    bind(ContactListView.class).to(ContactListViewImpl.class).in(Singleton.class);
-//    bind(MailDetailView.class).to(MailDetailViewImpl.class).in(Singleton.class);
-//    bind(MailListView.class).to(MailListViewImpl.class).in(Singleton.class);
+
     bind(MainMenuViewImpl.class).in(Singleton.class);
-//    bind(SettingsNavigationView.class).to(SettingsNavigationViewImpl.class).in(Singleton.class);
 
     // Activities
     bind(CareerOverviewActivity.class).toProvider(CareerOverviewActivityProvider.class);
@@ -113,11 +108,6 @@ public class GinModule extends AbstractGinModule {
     bind(AdditionalInfoDetailsActivity.class).toProvider(AdditionalInfoDetailsActivityProvider.class);
     bind(PublicationsTitleActivity.class).toProvider(PublicationsTitleActivityProvider.class);
     bind(PublicationsDetailsActivity.class).toProvider(PublicationsDetailsActivityProvider.class);
-//    bind(ContactDetailActivity.class).toProvider(ContactDetailActivityProvider.class);
-//    bind(ContactListActivity.class).toProvider(ContactListActivityProvider.class);
-//    bind(MailDetailActivity.class).toProvider(MailDetailActivityProvider.class);
-//    bind(MailListActivity.class).toProvider(MailListActivityProvider.class);
-//    bind(SettingsActivity.class).toProvider(SettingsActivityProvider.class);
 
     // Places
     bind(PlaceHistoryMapper.class).to(AppPlaceHistoryMapper.class).in(Singleton.class);
