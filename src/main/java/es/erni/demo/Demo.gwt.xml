@@ -23,7 +23,7 @@
   <entry-point class='es.erni.demo.client.Demo'/>
   
   <!-- Use DesktopInjectorWrapper by default -->
-  <replace-with class="es.erni.demo.client.mobile.ioc.MobileInjectorWrapper">
+  <replace-with class="es.erni.demo.client.ioc.DesktopInjectorWrapper">
     <when-type-is class="es.erni.demo.client.ioc.InjectorWrapper" />
   </replace-with>
   
