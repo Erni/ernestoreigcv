@@ -16,9 +16,10 @@ import es.erni.demo.client.place.ProfExpPlace;
 import es.erni.demo.client.place.PublicationsPlace;
 import es.erni.demo.client.place.TechSkillsPlace;
 import es.erni.demo.client.ui.DemoShell;
-import es.erni.demo.client.ui.MainMenuViewImpl;
+import es.erni.demo.client.ui.MainMenuView;
+import es.erni.demo.client.ui.desktop.MainMenuViewImpl;
 
-public class DemoAppImpl implements DemoApp {
+public class DemoAppImpl implements DemoApp, MainMenuView.Presenter {
 	
 	private Place currentPlace;
 	private final PlaceHistoryHandler placeHistoryHandler;

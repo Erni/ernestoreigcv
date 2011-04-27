@@ -21,4 +21,43 @@
 
   <!-- setting the app entry point -->
   <entry-point class='es.erni.demo.client.Demo'/>
+  
+  <!-- Use DesktopInjectorWrapper by default -->
+  <replace-with class="es.erni.demo.client.mobile.ioc.MobileInjectorWrapper">
+    <when-type-is class="es.erni.demo.client.ioc.InjectorWrapper" />
+  </replace-with>
+  
+  <!-- Define a property to determine if we are mobile or not -->
+  <define-property name="mobile.user.agent" values="android, iphone, not_mobile" />
+  
+  <!-- now lets actually do the checking -->
+  <property-provider name="mobile.user.agent">
+    <![CDATA[
+    {
+      var ua = window.navigator.userAgent.toLowerCase();
+      if (ua.indexOf('android') != -1) { return 'android'; }
+      if (ua.indexOf('iphone') != -1) { return 'iphone'; }
+      return 'not_mobile';
+    }
+    ]]>
+  </property-provider>
+
+  <!-- Constrain the value for non-webkit browsers -->
+  <set-property name="mobile.user.agent" value="not_mobile" >
+    <none> <!-- Actually means NOR, in this case "not safari" -->
+      <when-property-is name="user.agent" value="safari" />
+    </none>
+  </set-property>
+  
+  <!-- Now that we have our property that knows if we are building for a mobile -->
+  <!-- we can tell GWT what to do in the case that we are building for a mobile -->
+  <!-- We are just going to use a different Injector (Change the Wrapper)     -->
+  <!-- A different Wrapper will specify a different Type of Application (Desktop/Mobile) -->
+  <replace-with class="es.erni.demo.client.mobile.ioc.MobileInjectorWrapper">
+      <when-type-is class="es.erni.demo.client.ioc.InjectorWrapper"/>
+     <!-- <all> -->
+        <when-property-is name="mobile.user.agent" value="android"/>
+     <!--  </all> -->
+  </replace-with>
+  
 </module>

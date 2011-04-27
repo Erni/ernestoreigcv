@@ -25,6 +25,8 @@ import es.erni.demo.client.ioc.KeyStrengthsListActivityProvider;
 import es.erni.demo.client.ioc.ProfExpDetailsActivityProvider;
 import es.erni.demo.client.ioc.PublicationsDetailsActivityProvider;
 import es.erni.demo.client.ioc.TechSkillsDetailsActivityProvider;
+import es.erni.demo.client.mobile.activity.MainMenuActivity;
+import es.erni.demo.client.mobile.ioc.MainMenuActivityProvider;
 import es.erni.demo.client.mvp.KeyStrengthsActivityMapper;
 import es.erni.demo.client.mvp.MainContentActivityMapper;
 import es.erni.demo.client.place.JobDetailPlace;
@@ -32,6 +34,7 @@ import es.erni.demo.client.ui.AdditionalInfoDetailsView;
 import es.erni.demo.client.ui.CareerOverviewView;
 import es.erni.demo.client.ui.EducationDetailsView;
 import es.erni.demo.client.ui.KeyStrengthsListView;
+import es.erni.demo.client.ui.MainMenuView;
 import es.erni.demo.client.ui.ProfExpDetailsView;
 import es.erni.demo.client.ui.ProfExpListView;
 import es.erni.demo.client.ui.PublicationsDetailsView;
@@ -50,6 +53,7 @@ public class SomeActivityTest extends TestCase {
 		final EducationDetailsView educationDetailsView = createMock(EducationDetailsView.class);
 		final AdditionalInfoDetailsView additionalInfoDetailsView = createMock(AdditionalInfoDetailsView.class);
 		final PublicationsDetailsView publicationsDetailsView = createMock(PublicationsDetailsView.class);
+		final MainMenuView mainMenuView = createMock(MainMenuView.class);
 		
 		final EventBus eventBus = new SimpleEventBus();
 		
@@ -63,12 +67,13 @@ public class SomeActivityTest extends TestCase {
 		final Provider<ProfExpDetailsActivity> profExpDetailsActivityProvider = new ProfExpDetailsActivityProvider(profExpDetailsView);
 		final Provider<EducationDetailsActivity> educationDetailsActivityProvider = new EducationDetailsActivityProvider(educationDetailsView);
 		final Provider<AdditionalInfoDetailsActivity> additionalInfoDetailsActivityProvider = new AdditionalInfoDetailsActivityProvider(additionalInfoDetailsView);
+		final Provider<MainMenuActivity> mainMenuActivityProvider = new MainMenuActivityProvider(mainMenuView,placeController);
 		
 		final MainContentActivityMapper activityMapper = new MainContentActivityMapper(new CareerOverviewActivityProvider(careerOverviewView),
 				new KeyStrengthsActivityMapper(keyStrengthsListActivityProvider),
 				techSkillsDetailsActivityProvider, profExpDetailsActivityProvider,
 				educationDetailsActivityProvider, additionalInfoDetailsActivityProvider,
-				publicationsDetailsActivityProvider);
+				publicationsDetailsActivityProvider, mainMenuActivityProvider);
 		
 		assertTrue("The activity must be instance of ProfExpDetailsActivity",activityMapper.getActivity(new JobDetailPlace("3")) instanceof ProfExpDetailsActivity);
 		

@@ -28,6 +28,9 @@ import es.erni.demo.client.activity.PublicationsDetailsActivity;
 import es.erni.demo.client.activity.PublicationsTitleActivity;
 import es.erni.demo.client.activity.TechSkillsDetailsActivity;
 import es.erni.demo.client.activity.TechSkillsTitleActivity;
+import es.erni.demo.client.mobile.activity.MainMenuActivity;
+import es.erni.demo.client.mobile.ioc.MainMenuActivityProvider;
+import es.erni.demo.client.mobile.ui.MainMenuViewMobileImpl;
 import es.erni.demo.client.mvp.AppPlaceHistoryMapper;
 import es.erni.demo.client.mvp.HorizontalMasterActivityMapper;
 import es.erni.demo.client.mvp.MainContentActivityMapper;
@@ -35,38 +38,39 @@ import es.erni.demo.client.mvp.SideContainerActivityMapper;
 import es.erni.demo.client.mvp.VerticalMasterActivityMapper;
 import es.erni.demo.client.place.CareerOverviewPlace;
 import es.erni.demo.client.ui.AdditionalInfoDetailsView;
-import es.erni.demo.client.ui.AdditionalInfoDetailsViewImpl;
 import es.erni.demo.client.ui.AdditionalInfoTitleLeftView;
-import es.erni.demo.client.ui.AdditionalInfoTitleLeftViewImpl;
 import es.erni.demo.client.ui.AdditionalInfoTitleRightView;
-import es.erni.demo.client.ui.AdditionalInfoTitleRightViewImpl;
 import es.erni.demo.client.ui.CareerOverviewView;
-import es.erni.demo.client.ui.CareerOverviewViewImpl;
 import es.erni.demo.client.ui.DemoShell;
-import es.erni.demo.client.ui.DemoShellImpl;
 import es.erni.demo.client.ui.EducationDetailsView;
-import es.erni.demo.client.ui.EducationDetailsViewImpl;
 import es.erni.demo.client.ui.EducationTitleView;
-import es.erni.demo.client.ui.EducationTitleViewImpl;
 import es.erni.demo.client.ui.KeyStrengthsListView;
-import es.erni.demo.client.ui.KeyStrengthsListViewImpl;
 import es.erni.demo.client.ui.KeyStrengthsView;
-import es.erni.demo.client.ui.KeyStrengthsViewImpl;
-import es.erni.demo.client.ui.MainMenuViewImpl;
+import es.erni.demo.client.ui.MainMenuView;
 import es.erni.demo.client.ui.ProfExpDetailsView;
-import es.erni.demo.client.ui.ProfExpDetailsViewImpl;
 import es.erni.demo.client.ui.ProfExpListView;
-import es.erni.demo.client.ui.ProfExpListViewImpl;
 import es.erni.demo.client.ui.ProfExpTitleView;
-import es.erni.demo.client.ui.ProfExpTitleViewImpl;
 import es.erni.demo.client.ui.PublicationsDetailsView;
-import es.erni.demo.client.ui.PublicationsDetailsViewImpl;
 import es.erni.demo.client.ui.PublicationsTitleView;
-import es.erni.demo.client.ui.PublicationsTitleViewImpl;
 import es.erni.demo.client.ui.TechSkillsDetailsView;
-import es.erni.demo.client.ui.TechSkillsDetailsViewImpl;
 import es.erni.demo.client.ui.TechSkillsTitleView;
-import es.erni.demo.client.ui.TechSkillsTitleViewImpl;
+import es.erni.demo.client.ui.desktop.AdditionalInfoDetailsViewImpl;
+import es.erni.demo.client.ui.desktop.AdditionalInfoTitleLeftViewImpl;
+import es.erni.demo.client.ui.desktop.AdditionalInfoTitleRightViewImpl;
+import es.erni.demo.client.ui.desktop.CareerOverviewViewImpl;
+import es.erni.demo.client.ui.desktop.DemoShellImpl;
+import es.erni.demo.client.ui.desktop.EducationDetailsViewImpl;
+import es.erni.demo.client.ui.desktop.EducationTitleViewImpl;
+import es.erni.demo.client.ui.desktop.KeyStrengthsListViewImpl;
+import es.erni.demo.client.ui.desktop.KeyStrengthsViewImpl;
+import es.erni.demo.client.ui.desktop.MainMenuViewImpl;
+import es.erni.demo.client.ui.desktop.ProfExpDetailsViewImpl;
+import es.erni.demo.client.ui.desktop.ProfExpListViewImpl;
+import es.erni.demo.client.ui.desktop.ProfExpTitleViewImpl;
+import es.erni.demo.client.ui.desktop.PublicationsDetailsViewImpl;
+import es.erni.demo.client.ui.desktop.PublicationsTitleViewImpl;
+import es.erni.demo.client.ui.desktop.TechSkillsDetailsViewImpl;
+import es.erni.demo.client.ui.desktop.TechSkillsTitleViewImpl;
 
 public class GinModule extends AbstractGinModule {
 
@@ -89,13 +93,10 @@ public class GinModule extends AbstractGinModule {
   	bind(AdditionalInfoDetailsView.class).to(AdditionalInfoDetailsViewImpl.class).in(Singleton.class);
   	bind(PublicationsTitleView.class).to(PublicationsTitleViewImpl.class).in(Singleton.class);
   	bind(PublicationsDetailsView.class).to(PublicationsDetailsViewImpl.class).in(Singleton.class);
-//    bind(AppLayout.class).to(AppLayoutImpl.class).in(Singleton.class);
-//    bind(ContactDetailView.class).to(ContactDetailViewImpl.class).in(Singleton.class);
-//    bind(ContactListView.class).to(ContactListViewImpl.class).in(Singleton.class);
-//    bind(MailDetailView.class).to(MailDetailViewImpl.class).in(Singleton.class);
-//    bind(MailListView.class).to(MailListViewImpl.class).in(Singleton.class);
+  	
+  	bind(MainMenuView.class).to(MainMenuViewMobileImpl.class).in(Singleton.class);
+
     bind(MainMenuViewImpl.class).in(Singleton.class);
-//    bind(SettingsNavigationView.class).to(SettingsNavigationViewImpl.class).in(Singleton.class);
 
     // Activities
     bind(CareerOverviewActivity.class).toProvider(CareerOverviewActivityProvider.class);
@@ -113,11 +114,8 @@ public class GinModule extends AbstractGinModule {
     bind(AdditionalInfoDetailsActivity.class).toProvider(AdditionalInfoDetailsActivityProvider.class);
     bind(PublicationsTitleActivity.class).toProvider(PublicationsTitleActivityProvider.class);
     bind(PublicationsDetailsActivity.class).toProvider(PublicationsDetailsActivityProvider.class);
-//    bind(ContactDetailActivity.class).toProvider(ContactDetailActivityProvider.class);
-//    bind(ContactListActivity.class).toProvider(ContactListActivityProvider.class);
-//    bind(MailDetailActivity.class).toProvider(MailDetailActivityProvider.class);
-//    bind(MailListActivity.class).toProvider(MailListActivityProvider.class);
-//    bind(SettingsActivity.class).toProvider(SettingsActivityProvider.class);
+    
+    bind(MainMenuActivity.class).toProvider(MainMenuActivityProvider.class);
 
     // Places
     bind(PlaceHistoryMapper.class).to(AppPlaceHistoryMapper.class).in(Singleton.class);

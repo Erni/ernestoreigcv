@@ -15,6 +15,8 @@ public interface DemoShell {
 	
 	AcceptsOneWidget getSideContainer();
 	
+	void setDefaultLayout();
+	
 	void setCareerOverviewLayout();
 	
 	void setKeyStrengthsLayout();

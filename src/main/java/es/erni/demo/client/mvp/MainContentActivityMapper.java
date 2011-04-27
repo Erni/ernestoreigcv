@@ -12,8 +12,10 @@ import es.erni.demo.client.activity.EducationDetailsActivity;
 import es.erni.demo.client.activity.ProfExpDetailsActivity;
 import es.erni.demo.client.activity.PublicationsDetailsActivity;
 import es.erni.demo.client.activity.TechSkillsDetailsActivity;
+import es.erni.demo.client.mobile.activity.MainMenuActivity;
 import es.erni.demo.client.place.AdditionalInfoPlace;
 import es.erni.demo.client.place.CareerOverviewPlace;
+import es.erni.demo.client.place.DefaultPlace;
 import es.erni.demo.client.place.EducationPlace;
 import es.erni.demo.client.place.JobDetailPlace;
 import es.erni.demo.client.place.KeyStrengthsPlace;
@@ -29,6 +31,7 @@ public class MainContentActivityMapper implements ActivityMapper {
 	private final Provider<EducationDetailsActivity> educationDetailsActivityProvider;
 	private final Provider<AdditionalInfoDetailsActivity> additionalInfoDetailsActivityProvider;
 	private final Provider<PublicationsDetailsActivity> publicationsDetailsActivityProvider;
+	private final Provider<MainMenuActivity> mainMenuActivityProvider;
 	
 	@Inject
 	public MainContentActivityMapper(Provider<CareerOverviewActivity> careerOverviewActivityProvider,
@@ -37,7 +40,8 @@ public class MainContentActivityMapper implements ActivityMapper {
 			Provider<ProfExpDetailsActivity> profExpDetailsActivityProvider,
 			Provider<EducationDetailsActivity> educationDetailsActivityProvider,
 			Provider<AdditionalInfoDetailsActivity> additionalInfoDetailsActivityProvider,
-			Provider<PublicationsDetailsActivity> publicationsDetailsActivityProvider) {
+			Provider<PublicationsDetailsActivity> publicationsDetailsActivityProvider,
+			Provider<MainMenuActivity> mainMenuActivityProvider) {
 		this.careerOverviewActivityProvider = careerOverviewActivityProvider;
 		this.keyStrengthsActivityMapper = keyStrengthsActivityMapper;
 		this.techSkillsDetailsActivityProvider = techSkillsDetailsActivityProvider;
@@ -45,6 +49,7 @@ public class MainContentActivityMapper implements ActivityMapper {
 		this.educationDetailsActivityProvider = educationDetailsActivityProvider;
 		this.additionalInfoDetailsActivityProvider = additionalInfoDetailsActivityProvider;
 		this.publicationsDetailsActivityProvider = publicationsDetailsActivityProvider;
+		this.mainMenuActivityProvider = mainMenuActivityProvider;
 	}
 
   public Activity getActivity(Place place) {
@@ -68,6 +73,10 @@ public class MainContentActivityMapper implements ActivityMapper {
   		return activity;
   	} else if(place instanceof PublicationsPlace) {
   		PublicationsDetailsActivity activity = publicationsDetailsActivityProvider.get();
+  		return activity;
+  	}
+  	else if(place instanceof DefaultPlace) {
+  		MainMenuActivity activity = mainMenuActivityProvider.get();
   		return activity;
   	}
 
