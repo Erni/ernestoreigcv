@@ -17,7 +17,6 @@ public class ProfExpListActivity extends AbstractActivity implements ProfExpList
   public ProfExpListActivity(ProfExpListView view, PlaceController placeController, EventBus eventBus) {
   	this.view = view;
   	this.placeController = placeController;
-//  	eventBus.addHandler(PlaceChangeEvent.TYPE, new MailDetailPlaceChangeHandler());
   }
 
 	public void start(AcceptsOneWidget panel, EventBus eventBus) {

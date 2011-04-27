@@ -21,7 +21,6 @@ public class KeyStrengthsActivityMapper implements ActivityMapper {
   public Activity getActivity(Place place) {
     if (place instanceof KeyStrengthsPlace) {
     	KeyStrengthsListActivity activity = keyStrengthsListActivityProvider.get();
-//      activity.setPlace(null);
       return activity;
     }
 
