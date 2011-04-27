@@ -212,19 +212,6 @@
           </g:DisclosurePanel>
         </td>
       </tr>
-            <tr>
-        <td>
-          <g:DisclosurePanel ui:field="pub14" >
-            <g:header>
-              Estandarizar la Historia Clínica Electrónica según la norma ISO 13606 con LinkEHR
-            </g:header>
-            <g:HTMLPanel>
-              <b>Authors:</b> C. Angulo, D. Moner, JA. Maldonado, E. Reig, M. Robles, D. Pérez, S. Martínez<br />
-              Inforsalud 2009, XII Congreso Nacional de Informática y Salud.
-            </g:HTMLPanel>
-          </g:DisclosurePanel>
-        </td>
-      </tr>
       
     </table>
 

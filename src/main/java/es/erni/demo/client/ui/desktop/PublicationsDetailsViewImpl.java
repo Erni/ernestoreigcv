@@ -4,12 +4,10 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.DisclosurePanel;
-import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.Widget;
 
 import es.erni.demo.client.ui.PublicationsDetailsView;
-import es.erni.demo.client.ui.PublicationsDetailsView.Presenter;
 
 public class PublicationsDetailsViewImpl implements PublicationsDetailsView {
 
@@ -33,7 +31,6 @@ public class PublicationsDetailsViewImpl implements PublicationsDetailsView {
   @UiField DisclosurePanel pub11;
   @UiField DisclosurePanel pub12;
   @UiField DisclosurePanel pub13;
-  @UiField DisclosurePanel pub14;
 
 	public PublicationsDetailsViewImpl() {
 		scrollPanel = uiBinder.createAndBindUi(this);
@@ -51,7 +48,6 @@ public class PublicationsDetailsViewImpl implements PublicationsDetailsView {
 		pub11.setAnimationEnabled(true);
 		pub12.setAnimationEnabled(true);
 		pub13.setAnimationEnabled(true);
-		pub14.setAnimationEnabled(true);
 	}
 	
 	public Widget asWidget() {

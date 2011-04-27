@@ -93,11 +93,8 @@ public class GinModule extends AbstractGinModule {
   	bind(AdditionalInfoDetailsView.class).to(AdditionalInfoDetailsViewImpl.class).in(Singleton.class);
   	bind(PublicationsTitleView.class).to(PublicationsTitleViewImpl.class).in(Singleton.class);
   	bind(PublicationsDetailsView.class).to(PublicationsDetailsViewImpl.class).in(Singleton.class);
-<<<<<<< HEAD
   	
-  	bind(MainMenuView.class).to(MainMenuViewMobileImpl.class).in(Singleton.class);
-=======
->>>>>>> 375cd5400968b6191a2d8ad4de32c3090734ce07
+//  	bind(MainMenuView.class).to(MainMenuViewMobileImpl.class).in(Singleton.class);
 
     bind(MainMenuViewImpl.class).in(Singleton.class);
 
@@ -117,11 +114,8 @@ public class GinModule extends AbstractGinModule {
     bind(AdditionalInfoDetailsActivity.class).toProvider(AdditionalInfoDetailsActivityProvider.class);
     bind(PublicationsTitleActivity.class).toProvider(PublicationsTitleActivityProvider.class);
     bind(PublicationsDetailsActivity.class).toProvider(PublicationsDetailsActivityProvider.class);
-<<<<<<< HEAD
     
     bind(MainMenuActivity.class).toProvider(MainMenuActivityProvider.class);
-=======
->>>>>>> 375cd5400968b6191a2d8ad4de32c3090734ce07
 
     // Places
     bind(PlaceHistoryMapper.class).to(AppPlaceHistoryMapper.class).in(Singleton.class);

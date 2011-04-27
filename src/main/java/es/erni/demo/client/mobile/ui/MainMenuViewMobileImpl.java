@@ -32,13 +32,13 @@ public class MainMenuViewMobileImpl implements MainMenuView {
 	public MainMenuViewMobileImpl() {
 		panel = uiBinder.createAndBindUi(this);
 		
-		careeroverview.setHTML(AbstractImagePrototype.create(Styles.resources().debian()).getHTML() + " Career Overview");
-		keystrengths.setHTML(AbstractImagePrototype.create(Styles.resources().facecool()).getHTML() + " Key Strengths");
-		technicalskills.setHTML(AbstractImagePrototype.create(Styles.resources().techskills()).getHTML() + " Technical Skills");
-		professionalexperience.setHTML(AbstractImagePrototype.create(Styles.resources().profexp()).getHTML() + " Professional Experience");
-		education.setHTML(AbstractImagePrototype.create(Styles.resources().education()).getHTML() + " Education");
-		additionalinfo.setHTML(AbstractImagePrototype.create(Styles.resources().userinfo()).getHTML() + " Additional Information");
-		publications.setHTML(AbstractImagePrototype.create(Styles.resources().science()).getHTML() + " Publications");
+		careeroverview.setHTML(AbstractImagePrototype.create(Styles.resources().debian48()).getHTML() + " Career Overview");
+		keystrengths.setHTML(AbstractImagePrototype.create(Styles.resources().facecool48()).getHTML() + " Key Strengths");
+		technicalskills.setHTML(AbstractImagePrototype.create(Styles.resources().techskills48()).getHTML() + " Technical Skills");
+		professionalexperience.setHTML(AbstractImagePrototype.create(Styles.resources().profexp48()).getHTML() + " Professional Experience");
+		education.setHTML(AbstractImagePrototype.create(Styles.resources().education48()).getHTML() + " Education");
+		additionalinfo.setHTML(AbstractImagePrototype.create(Styles.resources().userinfo48()).getHTML() + " Additional Information");
+		publications.setHTML(AbstractImagePrototype.create(Styles.resources().science48()).getHTML() + " Publications");
 	}
 
 	public Widget asWidget() {

@@ -6,7 +6,7 @@
       position: absolute;
       left: 5%;
       top: 30%;
-      font-size: 1.5em;
+      font-size: 3em;
       color: #680000;
       font-weight: bold;
       letter-spacing: 2px;
