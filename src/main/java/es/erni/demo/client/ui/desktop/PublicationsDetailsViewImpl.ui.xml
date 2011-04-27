@@ -1,0 +1,235 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+  <ui:style>
+  .text {
+    font-family:arial, helvetica;
+    font-size: 1.2em;
+    text-align: justify;
+  }
+  .ov_table {
+    border: 1px solid #A0A0A0;
+    background-color: #E0E0E0;
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    top: 2%;
+    border-radius: 0.5em;
+    padding: 10px;
+  }
+  .panel {
+    background-color: #E0E0E0;
+  }
+  .section_header {
+    font-family: “MS Sans Serif”;
+    text-align: left;
+    font-size: 2em;
+    color: #680000;
+  }
+  .scrollPanel {
+    height: 100%;
+  }
+  </ui:style>
+  
+  <ui:with field='res' type='es.erni.demo.client.style.Styles.Resources' />
+  
+  <g:ScrollPanel styleName="{style.scrollPanel}">
+  
+  <g:HTMLPanel styleName="{style.panel}">
+    
+    <table class='{style.ov_table}'>
+      <tr>
+        <td>
+          <g:DisclosurePanel ui:field="pub1" >  
+            <g:header>
+              Estandarizar la Historia Clínica Electrónica según la norma ISO 13606 con LinkEHR
+            </g:header>
+            <g:HTMLPanel>
+              <b>Authors:</b> Angulo, C., Moner, D., Maldonado, J.A., Reig, E., Martínez, S.<br />
+              Inforsalud 2009. XII Congreso Nacional de Informática de la Salud (Madrid)
+            </g:HTMLPanel>
+          </g:DisclosurePanel>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <g:DisclosurePanel ui:field="pub2" >  
+            <g:header>
+              Plataforma para la comunicación de Historia Clínica Electrónica estandarizada basada en agentes software
+            </g:header>
+            <g:HTMLPanel>
+              <b>Authors:</b> Boscá, D., Maldonado, J.A., Moner, D., Angulo, C., Reig , E.<br />
+              Inforsalud 2009. XII Congreso Nacional de Informática de la Salud (Madrid)
+            </g:HTMLPanel>
+          </g:DisclosurePanel>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <g:DisclosurePanel ui:field="pub3" >  
+            <g:header>
+              Pangea-LE: a non-invasive lightweight biomedical data integration engine
+            </g:header>
+            <g:HTMLPanel>
+              <b>Authors:</b> Angulo C., Reig  E., Maldonado J.A., Moner D., Boscá D., Pérez D., Abad I., Mandingorra J.<br />
+              Jornadas Nacionales de Bioinformatica 2008. pp. 83-87
+            </g:HTMLPanel>
+          </g:DisclosurePanel>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <g:DisclosurePanel ui:field="pub4" >  
+            <g:header>
+              Estandarización de informes de alta hospitalarios con la norma ISO 13606
+            </g:header>
+            <g:HTMLPanel>
+              <b>Authors:</b> Moner Cano, D., Maldonado Segura JA., Angulo Fernández, C., Boscá Tomás, D., Pérez, D., Abad Pérez, I., Reig Alvárez, Ernesto.<br />
+              Inforsalud 2008. Libro de comunicaciones, pp. 34-39. Madrid Abril 2008.
+            </g:HTMLPanel>
+          </g:DisclosurePanel>
+        </td>
+      </tr>
+            <tr>
+        <td>
+          <g:DisclosurePanel ui:field="pub5" >  
+            <g:header>
+              LinkEHR-Ed: Una herramienta para la estandarización de la historia clínica electrónica.
+            </g:header>
+            <g:HTMLPanel>
+              <b>Authors:</b> Maldonado JA., Moner, D., Boscá, D., Angulo, C., Abad, I., Pérez, D., Serrano, P., Reig, E.<br />
+              Inforsalud 2008: Libro de comunicaciones, pp. 317-322. Madrid Abril 2008.
+            </g:HTMLPanel>
+          </g:DisclosurePanel>
+        </td>
+      </tr>
+            <tr>
+        <td>
+          <g:DisclosurePanel ui:field="pub6" >  
+            <g:header>
+              Standardization of Discharge Reports with the ISO 13606 Norm
+            </g:header>
+            <g:HTMLPanel>
+              <b>Authors:</b> Moner D., Maldonado J.A., Angulo C., Boscá D., Pérez D., Abad I., Reig E., Robles M.<br />
+              30th Annual International IEEE EMBS Conference. Vancouver, Canada, August 20-24 2008
+            </g:HTMLPanel>
+          </g:DisclosurePanel>
+        </td>
+      </tr>
+            <tr>
+        <td>
+          <g:DisclosurePanel ui:field="pub7" >  
+            <g:header>
+              Normalización, historia clínica electrónica, traducción de datos, arquetipos, modelado semántico
+            </g:header>
+            <g:HTMLPanel>
+              <b>Authors:</b> Maldonado J.A., Moner D., Boscá D., Angulo C., Reig E., Robles M.<br />
+              CASEIB 2007, XXV Congreso Anual de la Sociedad Española de Ingeniería Biomédica.
+            </g:HTMLPanel>
+          </g:DisclosurePanel>
+        </td>
+      </tr>
+            <tr>
+        <td>
+          <g:DisclosurePanel ui:field="pub8" >  
+            <g:header>
+              Historia Clínica Electrónica, Arquetipo, agentes software, repositorio, CEN 13606, modelo dual
+            </g:header>
+            <g:HTMLPanel>
+              <b>Authors:</b> Moner D., Boscá D., Maldonado J.A., Martínez G., Angulo C., Reig E., Robles M.<br />
+              Moner D., Boscá D., Maldonado J.A., Martínez G., Angulo C., Reig E., Robles M.
+            </g:HTMLPanel>
+          </g:DisclosurePanel>
+        </td>
+      </tr>
+            <tr>
+        <td>
+          <g:DisclosurePanel ui:field="pub9" >  
+            <g:header>
+              Integración de datos biomédicos, sistemas de información clínica, Intercambio de datos, gestión de la información
+            </g:header>
+            <g:HTMLPanel>
+              <b>Authors:</b> Angulo C., Reig E., Maldonado J.A., Moner D., Boscá D., Pérez D., Abad I., Mandigorra J.<br />
+              CASEIB 2007, XXV Congreso Anual de la Sociedad Española de Ingeniería Biomédica.
+            </g:HTMLPanel>
+          </g:DisclosurePanel>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <g:DisclosurePanel ui:field="pub10" >  
+            <g:header>
+              Repositorio distribuido de conceptos biomédicos
+            </g:header>
+            <g:HTMLPanel>
+              <b>Authors:</b> Moner D., Boscá D., Maldonado J.A., Martínez G., Angulo C., Reig E., Robles M.<br />
+              CASEIB 2007 Libro de comunicaciones
+            </g:HTMLPanel>
+          </g:DisclosurePanel>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <g:DisclosurePanel ui:field="pub11" >  
+            <g:header>
+              Pangea-LE: un sistema no invasivo de integración de información biomédica
+            </g:header>
+            <g:HTMLPanel>
+              <b>Authors:</b> Angulo C., Reig E., Maldonado J.A., Moner D., Boscá D., Pérez D., Abad I., Mandigorra J.<br />
+              CASEIB 2007 Libro de comunicaciones. ISBN: 84-612-0368-0
+            </g:HTMLPanel>
+          </g:DisclosurePanel>
+        </td>
+      </tr>
+            <tr>
+        <td>
+          <g:DisclosurePanel ui:field="pub12" >  
+            <g:header>
+              Normalización de datos biomédicos basada en arquetipos
+            </g:header>
+            <g:HTMLPanel>
+              <b>Authors:</b> Maldonado J.A.; Moner D., Boscá D.; Angulo C., Reig E., Robles M.<br />
+              CASEIB 2007 Libro de comunicaciones. ISBN: 84-612-0368-0
+            </g:HTMLPanel>
+          </g:DisclosurePanel>
+        </td>
+      </tr>
+            <tr>
+        <td>
+          <g:DisclosurePanel ui:field="pub13" >  
+            <g:header>
+              Plataforma para la comunicación de historia clínica electrónica estandarizada basada en agentes software
+            </g:header>
+            <g:HTMLPanel>
+              <b>Authors:</b> D. Boscá, JA Maldonado, D. Moner, C. Angulo, E. Reig, M. Robles.<br />
+              Inforsalud 2009, XII Congreso Nacional de Informática y Salud
+            </g:HTMLPanel>
+          </g:DisclosurePanel>
+        </td>
+      </tr>
+            <tr>
+        <td>
+          <g:DisclosurePanel ui:field="pub14" >
+            <g:header>
+              Estandarizar la Historia Clínica Electrónica según la norma ISO 13606 con LinkEHR
+            </g:header>
+            <g:HTMLPanel>
+              <b>Authors:</b> C. Angulo, D. Moner, JA. Maldonado, E. Reig, M. Robles, D. Pérez, S. Martínez<br />
+              Inforsalud 2009, XII Congreso Nacional de Informática y Salud.
+            </g:HTMLPanel>
+          </g:DisclosurePanel>
+        </td>
+      </tr>
+      
+    </table>
+
+  </g:HTMLPanel>
+  
+  </g:ScrollPanel>
+
+</ui:UiBinder> 

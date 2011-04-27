@@ -1,0 +1,26 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		.panel {
+      height: 100%;
+      width: 100%;
+		}
+		.button {
+      height: 100%;
+      width: 100%;
+    }
+	</ui:style>
+	
+ <!-- <ui:with field='res' type='es.erni.demo.client.style.Styles.Resources'/> -->
+	
+	<g:VerticalPanel addStyleNames="{style.panel}">
+	  <g:Button ui:field="careeroverview" addStyleNames="{style.button}">careeroverview</g:Button>
+	  <g:Button ui:field="keystrengths" addStyleNames="{style.button}">keystrengths</g:Button>
+	  <g:Button ui:field="technicalskills" addStyleNames="{style.button}">technicalskills</g:Button>
+	  <g:Button ui:field="professionalexperience" addStyleNames="{style.button}">professionalexperience</g:Button>
+	  <g:Button ui:field="education" addStyleNames="{style.button}">education</g:Button>
+	  <g:Button ui:field="additionalinfo" addStyleNames="{style.button}">additionalinfo</g:Button>
+	  <g:Button ui:field="publications" addStyleNames="{style.button}">publications</g:Button>
+	</g:VerticalPanel>
+</ui:UiBinder> 

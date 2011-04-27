@@ -1,0 +1,51 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+  <ui:style>
+  .ov_table {
+    border: 1px solid #A0A0A0;
+    background-color: #E0E0E0;
+    width: 80%;
+
+    position: absolute;
+    left: 3%;
+    right: 0%;
+    top: 2%;
+    bottom: 12%;
+    border-radius: 0.5em;
+    padding: 10px;
+  }
+  .panel {
+    background-color: #E0E0E0;
+  }
+  .section_header {
+    font-family: “MS Sans Serif”;
+    text-align: left;
+    font-size: 2em;
+    color: #680000;
+    text-align: center;
+  }
+  </ui:style>
+  
+  <ui:with field='res' type='es.erni.demo.client.style.Styles.Resources' />
+  
+  <g:HTMLPanel styleName="{style.panel}">
+    
+    <table class='{style.ov_table}' align="center">
+      <tr><td class="{style.section_header}"><g:Image resource="{res.userinfo48}" /></td></tr>
+      <tr><td class="{style.section_header}">A</td></tr>
+      <tr><td class="{style.section_header}">d</td></tr>
+      <tr><td class="{style.section_header}">d</td></tr>
+      <tr><td class="{style.section_header}">i</td></tr>
+      <tr><td class="{style.section_header}">t</td></tr>
+      <tr><td class="{style.section_header}">i</td></tr>
+      <tr><td class="{style.section_header}">o</td></tr>
+      <tr><td class="{style.section_header}">n</td></tr>
+      <tr><td class="{style.section_header}">a</td></tr>
+      <tr><td class="{style.section_header}">l</td></tr>
+    </table>
+
+  </g:HTMLPanel>
+
+</ui:UiBinder> 

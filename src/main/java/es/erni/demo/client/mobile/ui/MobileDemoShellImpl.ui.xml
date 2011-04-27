@@ -1,0 +1,43 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+	  .title {
+      position: absolute;
+      left: 5%;
+      top: 30%;
+      font-size: 1.5em;
+      color: #680000;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    .navigBarPanel {
+      /* gwt-image: 'mainmenu'; */
+      background-position: center center;
+      height: 100%;
+      width: 100%;
+      border: 1px solid gray;
+    }
+    /* @sprite .mainPanel { */
+    .mainPanel {
+      /* gwt-image: 'maincontent'; */
+      background-position: center center;
+      height: 100%;
+      width: 100%;
+      border: 1px solid gray;
+    }
+	</ui:style>
+	
+	<g:LayoutPanel>
+    <g:layer>
+      <g:SimplePanel ui:field="navigBarPanel" addStyleNames="{style.navigBarPanel}" >
+        <g:HTMLPanel addStyleNames="{style.title}">
+          public dynamic Ernesto Reig's Resume(); 
+        </g:HTMLPanel>
+      </g:SimplePanel>
+    </g:layer>
+    <g:layer>
+      <g:SimplePanel ui:field="mainPanel" addStyleNames="{style.mainPanel}"/>
+    </g:layer>
+	</g:LayoutPanel>
+</ui:UiBinder> 
