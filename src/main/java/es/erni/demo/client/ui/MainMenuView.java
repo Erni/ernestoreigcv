@@ -8,6 +8,7 @@ public interface MainMenuView extends IsWidget {
 
   public interface Presenter {
     
+//  	void gotoDefaultPlace();
   	void gotoCareerOverviewPlace();
   	void gotoKeyStrengthsPlace();
   	void gotoTechnicalSkillsPlace();

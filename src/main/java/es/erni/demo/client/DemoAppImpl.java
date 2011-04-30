@@ -10,6 +10,7 @@ import com.google.inject.Inject;
 
 import es.erni.demo.client.place.AdditionalInfoPlace;
 import es.erni.demo.client.place.CareerOverviewPlace;
+import es.erni.demo.client.place.DefaultPlace;
 import es.erni.demo.client.place.EducationPlace;
 import es.erni.demo.client.place.KeyStrengthsPlace;
 import es.erni.demo.client.place.ProfExpPlace;

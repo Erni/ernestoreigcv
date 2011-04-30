@@ -9,6 +9,9 @@ import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.inject.Inject;
 
 import es.erni.demo.client.DemoApp;
+import es.erni.demo.client.mobile.event.GoHomeEvent;
+import es.erni.demo.client.mobile.event.GoHomeEventHandler;
+import es.erni.demo.client.mobile.place.DefaultMobilePlace;
 import es.erni.demo.client.mobile.ui.MainMenuViewMobileImpl;
 import es.erni.demo.client.place.AdditionalInfoPlace;
 import es.erni.demo.client.place.CareerOverviewPlace;
@@ -23,8 +26,9 @@ public class MobileDemoAppImpl implements DemoApp {
 	
 	private Place currentPlace;
 	private final PlaceHistoryHandler placeHistoryHandler;
-//	private final PlaceController placeController;
+	private final PlaceController placeController;
 	private final DemoShell shell;
+	private final EventBus eventBus;
 	
   /**
    * All parameters are injected by GIN
@@ -41,8 +45,9 @@ public class MobileDemoAppImpl implements DemoApp {
 			EventBus eventBus, PlaceHistoryHandler placeHistoryHandler,
 			DemoShell shell, MainMenuViewMobileImpl mainMenuView, MobileActivityManagerInitializer mobileActivityManagerInitializer) {
   	this.placeHistoryHandler = placeHistoryHandler;
-//  	this.placeController = placeController;
+  	this.placeController = placeController;
   	this.shell = shell;
+  	this.eventBus = eventBus;
 //		mainMenuView.setPresenter(this);
 		eventBus.addHandler(PlaceChangeEvent.TYPE, new PlaceLayoutHandler());
 	}
@@ -76,6 +81,14 @@ public class MobileDemoAppImpl implements DemoApp {
 //  }
 
 	public void run() {
+    /*=========== EventBus handlers ================*/
+    eventBus.addHandler(GoHomeEvent.TYPE, new GoHomeEventHandler() {
+			public void onGoHome() {
+				placeController.goTo(new DefaultMobilePlace());
+      }
+    });
+    /*==============================================*/
+		
 		RootLayoutPanel.get().add(shell.getMainLayoutPanel());
 		placeHistoryHandler.handleCurrentHistory();
   }

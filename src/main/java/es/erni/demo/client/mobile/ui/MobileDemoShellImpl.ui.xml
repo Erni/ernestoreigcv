@@ -16,7 +16,7 @@
       background-position: center center;
       height: 100%;
       width: 100%;
-      border: 1px solid gray;
+      border: 0px solid gray;
     }
     /* @sprite .mainPanel { */
     .mainPanel {
@@ -40,14 +40,21 @@
       width: 100%;
       border: 0px solid gray;
     }
+    .home {
+      height: 100%;
+      width: 100%;
+      font-size: 400%;
+      text-align: center;
+      color: #ffffff;
+      background: #606060;
+      text-shadow:4px 4px 8px #B8B8B8;
+    }
 	</ui:style>
 	
 	<g:LayoutPanel>
     <g:layer>
       <g:SimplePanel ui:field="navigBarPanel" addStyleNames="{style.navigBarPanel}" >
-        <g:HTMLPanel addStyleNames="{style.title}">
-          public dynamic Ernesto Reig's Resume(); 
-        </g:HTMLPanel>
+        <g:Button ui:field="home" addStyleNames="{style.home}"> Main Menu</g:Button>
       </g:SimplePanel>
     </g:layer>
     <g:layer>

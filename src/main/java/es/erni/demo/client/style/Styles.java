@@ -58,6 +58,7 @@ public class Styles {
 		ImageResource pda();
 		ImageResource computer();
 		ImageResource art();
+		ImageResource home();
 		
 		@NotStrict
 		@Source("common.css")
