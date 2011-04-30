@@ -1,0 +1,80 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+  <ui:style>
+  .text {
+    font-family:arial, helvetica;
+    font-size: 1.2em;
+    text-align: justify;
+  }
+  .ov_table {
+    border: 1px solid #A0A0A0;
+    background-color: #E0E0E0;
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    right: 0%;
+    top: 2%;
+    border-radius: 0.5em;
+    padding: 10px;
+  }
+  .panel {
+    background-color: #E0E0E0;
+  }
+  .section_header {
+    font-family: “MS Sans Serif”;
+    text-align: left;
+    font-size: 2em;
+    color: #680000;
+  }
+  </ui:style>
+  
+  <ui:with field='res' type='es.erni.demo.client.style.Styles.Resources' />
+  
+  <g:HTMLPanel styleName="{style.panel}">
+    
+    <table class='{style.ov_table}'>
+      <tr><td class="{style.section_header}"> Welcome to my CV <hr /></td></tr>
+      <tr>
+        <td class="{style.text}">
+          This is, of course, a very small project, but it can be regarded as a base project structure in order to
+develop a large project. I mean, this project could have been made with very low complexity without
+following any design pattern. For example I could have used a small set of php's or html's with a bit of javascript.
+          <p>
+          It does not make any asynchronous call to the server in order to get data, because the
+complexity is very low and the data that is displayed is static, that is, the data is not retrieved
+from any database in the server and then sent to the client. The data is statically written in the
+code.
+But the thing is that it is ready to be put together with the other layers (or modules) that a
+large project could be composed of, keeping them separated with no dependence between them. It could be
+regarded as the presentation layer or client module of a large project, and connecting it to the
+server side would be done in a very easy and clean way.
+          </p>
+          <p>
+          The project honors the Model View Presenter design pattern using the built-in
+framework for MVP development that comes with GWT. The MVP pattern decouples development in a way that
+allows multiple developers to work simultaneously in a project. For example, a team could be
+working in the server module of the project without affecting the client side and vice versa.
+Moreover, the MVP pattern allows you to implement different views depending on different
+properties. For example the user agent, like a normal desktop web browser or a mobile web
+browser, a view or another will be presented to the user depending on where he/she is
+accessing from. Therefore, different developers could work on different implementations of a
+given view without changing a single line of code of the rest of the application.
+          </p>
+          <p>
+          <g:Image resource="{res.computer}" />
+          <g:Image resource="{res.pda}" />
+          This application is also accessible via mobile phone (android and iPhone). Of course it is a web app and therefore accessible from any browser, but it detects the user agent you are accessing from, and it presents a different view according to it.
+          This demonstrates the power that a good architecture could have in order to make easy and scalable applications. You can have your desktop web app and with very little more effort, create the mobile one, changing little more than the view classes. The logic remains unchanged ;)
+          </p>
+          <p>
+          <g:Image resource="{res.art}" />
+          You can see the code at <a href="http://goo.gl/7utdL" target="_blank">https://github.com/Erni/ernestoreigcv</a>. It is a GIT repository where you can download it if you want.
+          </p>
+
+
+        </td>
+      </tr>   
+    </table>
+	</g:HTMLPanel>
+</ui:UiBinder> 
