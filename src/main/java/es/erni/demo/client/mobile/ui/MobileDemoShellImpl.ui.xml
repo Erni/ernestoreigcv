@@ -24,7 +24,21 @@
       background-position: center center;
       height: 100%;
       width: 100%;
-      border: 1px solid gray;
+      border: 0px solid gray;
+    }
+    .hMasterPanel {
+      /* gwt-image: 'masterh'; */
+      background-position: center center;
+      height: 100%;
+      width: 100%;
+      border: 0px solid gray;
+    }
+    .sidePanel {
+      /* gwt-image: 'masterh'; */
+      background-position: center center;
+      height: 100%;
+      width: 100%;
+      border: 0px solid gray;
     }
 	</ui:style>
 	
@@ -35,6 +49,12 @@
           public dynamic Ernesto Reig's Resume(); 
         </g:HTMLPanel>
       </g:SimplePanel>
+    </g:layer>
+    <g:layer>
+      <g:SimplePanel ui:field="horizontalMasterPanel" addStyleNames="{style.hMasterPanel}"/>
+    </g:layer>
+    <g:layer>
+      <g:SimplePanel ui:field="sidePanel" addStyleNames="{style.sidePanel}"/>
     </g:layer>
     <g:layer>
       <g:SimplePanel ui:field="mainPanel" addStyleNames="{style.mainPanel}"/>

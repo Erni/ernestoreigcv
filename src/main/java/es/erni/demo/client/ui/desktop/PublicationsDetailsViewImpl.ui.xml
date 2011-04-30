@@ -199,19 +199,6 @@
           </g:DisclosurePanel>
         </td>
       </tr>
-            <tr>
-        <td>
-          <g:DisclosurePanel ui:field="pub13" >  
-            <g:header>
-              Plataforma para la comunicación de historia clínica electrónica estandarizada basada en agentes software
-            </g:header>
-            <g:HTMLPanel>
-              <b>Authors:</b> D. Boscá, JA Maldonado, D. Moner, C. Angulo, E. Reig, M. Robles.<br />
-              Inforsalud 2009, XII Congreso Nacional de Informática y Salud
-            </g:HTMLPanel>
-          </g:DisclosurePanel>
-        </td>
-      </tr>
       
     </table>
 

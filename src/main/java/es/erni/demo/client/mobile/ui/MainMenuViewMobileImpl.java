@@ -1,6 +1,8 @@
 package es.erni.demo.client.mobile.ui;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.AbstractImagePrototype;
@@ -39,6 +41,49 @@ public class MainMenuViewMobileImpl implements MainMenuView {
 		education.setHTML(AbstractImagePrototype.create(Styles.resources().education48()).getHTML() + " Education");
 		additionalinfo.setHTML(AbstractImagePrototype.create(Styles.resources().userinfo48()).getHTML() + " Additional Information");
 		publications.setHTML(AbstractImagePrototype.create(Styles.resources().science48()).getHTML() + " Publications");
+		
+		careeroverview.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				presenter.gotoCareerOverviewPlace();
+			}
+		});
+		
+		keystrengths.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				presenter.gotoKeyStrengthsPlace();
+			}
+		});
+		
+		technicalskills.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				presenter.gotoTechnicalSkillsPlace();
+			}
+		});
+		
+		professionalexperience.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				presenter.gotoProfessionalExperiencePlace();
+			}
+		});
+		
+		education.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				presenter.gotoEducationPlace();
+			}
+		});
+		
+		additionalinfo.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				presenter.gotoAdditionalInfoPlace();
+			}
+		});
+		
+		publications.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				presenter.gotoPublicationsPlace();
+			}
+		});
+		
 	}
 
 	public Widget asWidget() {

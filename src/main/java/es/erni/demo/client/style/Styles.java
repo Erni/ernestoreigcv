@@ -55,6 +55,9 @@ public class Styles {
 		ImageResource phone24();
 		ImageResource medium24();
 		ImageResource tux24();
+		ImageResource pda();
+		ImageResource computer();
+		ImageResource art();
 		
 		@NotStrict
 		@Source("common.css")

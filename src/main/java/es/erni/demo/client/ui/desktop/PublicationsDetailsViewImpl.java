@@ -30,7 +30,6 @@ public class PublicationsDetailsViewImpl implements PublicationsDetailsView {
   @UiField DisclosurePanel pub10;
   @UiField DisclosurePanel pub11;
   @UiField DisclosurePanel pub12;
-  @UiField DisclosurePanel pub13;
 
 	public PublicationsDetailsViewImpl() {
 		scrollPanel = uiBinder.createAndBindUi(this);
@@ -47,7 +46,6 @@ public class PublicationsDetailsViewImpl implements PublicationsDetailsView {
 		pub10.setAnimationEnabled(true);
 		pub11.setAnimationEnabled(true);
 		pub12.setAnimationEnabled(true);
-		pub13.setAnimationEnabled(true);
 	}
 	
 	public Widget asWidget() {

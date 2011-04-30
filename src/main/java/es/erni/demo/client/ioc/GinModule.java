@@ -17,6 +17,7 @@ import es.erni.demo.client.activity.AdditionalInfoDetailsActivity;
 import es.erni.demo.client.activity.AdditionalInfoTitleLeftActivity;
 import es.erni.demo.client.activity.AdditionalInfoTitleRightActivity;
 import es.erni.demo.client.activity.CareerOverviewActivity;
+import es.erni.demo.client.activity.DefaultActivity;
 import es.erni.demo.client.activity.EducationDetailsActivity;
 import es.erni.demo.client.activity.EducationTitleActivity;
 import es.erni.demo.client.activity.KeyStrengthsActivity;
@@ -28,19 +29,20 @@ import es.erni.demo.client.activity.PublicationsDetailsActivity;
 import es.erni.demo.client.activity.PublicationsTitleActivity;
 import es.erni.demo.client.activity.TechSkillsDetailsActivity;
 import es.erni.demo.client.activity.TechSkillsTitleActivity;
-import es.erni.demo.client.mobile.activity.MainMenuActivity;
-import es.erni.demo.client.mobile.ioc.MainMenuActivityProvider;
+import es.erni.demo.client.mobile.activity.DefaultMobileActivity;
+import es.erni.demo.client.mobile.ioc.DefaultMobileActivityProvider;
 import es.erni.demo.client.mobile.ui.MainMenuViewMobileImpl;
 import es.erni.demo.client.mvp.AppPlaceHistoryMapper;
 import es.erni.demo.client.mvp.HorizontalMasterActivityMapper;
 import es.erni.demo.client.mvp.MainContentActivityMapper;
 import es.erni.demo.client.mvp.SideContainerActivityMapper;
 import es.erni.demo.client.mvp.VerticalMasterActivityMapper;
-import es.erni.demo.client.place.CareerOverviewPlace;
+import es.erni.demo.client.place.DefaultPlace;
 import es.erni.demo.client.ui.AdditionalInfoDetailsView;
 import es.erni.demo.client.ui.AdditionalInfoTitleLeftView;
 import es.erni.demo.client.ui.AdditionalInfoTitleRightView;
 import es.erni.demo.client.ui.CareerOverviewView;
+import es.erni.demo.client.ui.DefaultView;
 import es.erni.demo.client.ui.DemoShell;
 import es.erni.demo.client.ui.EducationDetailsView;
 import es.erni.demo.client.ui.EducationTitleView;
@@ -58,6 +60,7 @@ import es.erni.demo.client.ui.desktop.AdditionalInfoDetailsViewImpl;
 import es.erni.demo.client.ui.desktop.AdditionalInfoTitleLeftViewImpl;
 import es.erni.demo.client.ui.desktop.AdditionalInfoTitleRightViewImpl;
 import es.erni.demo.client.ui.desktop.CareerOverviewViewImpl;
+import es.erni.demo.client.ui.desktop.DefaultViewImpl;
 import es.erni.demo.client.ui.desktop.DemoShellImpl;
 import es.erni.demo.client.ui.desktop.EducationDetailsViewImpl;
 import es.erni.demo.client.ui.desktop.EducationTitleViewImpl;
@@ -93,8 +96,10 @@ public class GinModule extends AbstractGinModule {
   	bind(AdditionalInfoDetailsView.class).to(AdditionalInfoDetailsViewImpl.class).in(Singleton.class);
   	bind(PublicationsTitleView.class).to(PublicationsTitleViewImpl.class).in(Singleton.class);
   	bind(PublicationsDetailsView.class).to(PublicationsDetailsViewImpl.class).in(Singleton.class);
+  	bind(DefaultView.class).to(DefaultViewImpl.class).in(Singleton.class);
   	
-//  	bind(MainMenuView.class).to(MainMenuViewMobileImpl.class).in(Singleton.class);
+//  this is a mobile View, but since the Activity it appears in a mapper, this module has to be aware of
+  	bind(MainMenuView.class).to(MainMenuViewMobileImpl.class).in(Singleton.class);
 
     bind(MainMenuViewImpl.class).in(Singleton.class);
 
@@ -114,8 +119,10 @@ public class GinModule extends AbstractGinModule {
     bind(AdditionalInfoDetailsActivity.class).toProvider(AdditionalInfoDetailsActivityProvider.class);
     bind(PublicationsTitleActivity.class).toProvider(PublicationsTitleActivityProvider.class);
     bind(PublicationsDetailsActivity.class).toProvider(PublicationsDetailsActivityProvider.class);
+    bind(DefaultActivity.class).toProvider(DefaultActivityProvider.class);
     
-    bind(MainMenuActivity.class).toProvider(MainMenuActivityProvider.class);
+//    this is a mobile Activity, but since it appears in a mapper, this module has to be aware of
+    bind(DefaultMobileActivity.class).toProvider(DefaultMobileActivityProvider.class);
 
     // Places
     bind(PlaceHistoryMapper.class).to(AppPlaceHistoryMapper.class).in(Singleton.class);
@@ -169,7 +176,8 @@ public class GinModule extends AbstractGinModule {
   @Singleton
   public PlaceHistoryHandler getHistoryHandler(PlaceController placeController, PlaceHistoryMapper historyMapper, EventBus eventBus) {
     PlaceHistoryHandler historyHandler = new PlaceHistoryHandler(historyMapper);
-    historyHandler.register(placeController, eventBus, new CareerOverviewPlace());
+//    historyHandler.register(placeController, eventBus, new CareerOverviewPlace());
+    historyHandler.register(placeController, eventBus, new DefaultPlace());
     return historyHandler;
   }
 }

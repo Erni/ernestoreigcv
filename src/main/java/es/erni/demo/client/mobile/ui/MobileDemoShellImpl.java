@@ -20,13 +20,16 @@ public class MobileDemoShellImpl implements DemoShell {
 	private final LayoutPanel mainLayoutPanel;
 	
   private static final int NAVIGBAR_HEIGHT = 10;
+  private static final int HMASTER_HEIGHT = 20;
+  private static final int SIDE_WIDTH = 20;
 	
 	@UiField SimplePanel navigBarPanel;
+	@UiField SimplePanel horizontalMasterPanel;
+	@UiField SimplePanel sidePanel;
 	@UiField SimplePanel mainPanel;
 
 	public MobileDemoShellImpl() {
 		mainLayoutPanel = uiBinder.createAndBindUi(this);
-//		setDefaultLayout();
 	}
 
 	public LayoutPanel getMainLayoutPanel() {
@@ -38,8 +41,7 @@ public class MobileDemoShellImpl implements DemoShell {
   }
 
 	public AcceptsOneWidget getHorizontalMasterContainer() {
-	  // TODO Auto-generated method stub
-	  return null;
+	  return horizontalMasterPanel;
   }
 
 	public AcceptsOneWidget getVerticalMasterContainer() {
@@ -48,23 +50,32 @@ public class MobileDemoShellImpl implements DemoShell {
   }
 
 	public AcceptsOneWidget getSideContainer() {
-	  // TODO Auto-generated method stub
-	  return null;
+	  return sidePanel;
   }
 
 	public void setCareerOverviewLayout() {
-	  // TODO Auto-generated method stub
-	  
+    int height = 100 - NAVIGBAR_HEIGHT;
+    mainLayoutPanel.setWidgetTopHeight(navigBarPanel, 0, PCT, NAVIGBAR_HEIGHT, PCT);
+    mainLayoutPanel.setWidgetTopHeight(mainPanel, NAVIGBAR_HEIGHT, PCT, height, PCT);
+    mainLayoutPanel.animate(500);
   }
 
 	public void setKeyStrengthsLayout() {
-	  // TODO Auto-generated method stub
-	  
+    int height = 100 - NAVIGBAR_HEIGHT - HMASTER_HEIGHT;
+    mainLayoutPanel.setWidgetTopHeight(navigBarPanel, 0, PCT, NAVIGBAR_HEIGHT, PCT);
+    mainLayoutPanel.setWidgetTopHeight(horizontalMasterPanel, NAVIGBAR_HEIGHT, PCT, HMASTER_HEIGHT, PCT);
+    mainLayoutPanel.setWidgetTopHeight(mainPanel, NAVIGBAR_HEIGHT + HMASTER_HEIGHT, PCT, height, PCT);
+    mainLayoutPanel.animate(500);
   }
 
 	public void setTechSkillsLayout() {
-	  // TODO Auto-generated method stub
-	  
+    int height = 100 - NAVIGBAR_HEIGHT;
+    mainLayoutPanel.setWidgetTopHeight(navigBarPanel, 0, PCT, NAVIGBAR_HEIGHT, PCT);
+    mainLayoutPanel.setWidgetTopHeight(mainPanel, NAVIGBAR_HEIGHT, PCT, height, PCT);
+    mainLayoutPanel.setWidgetRightWidth(mainPanel, SIDE_WIDTH, PCT, 100 - SIDE_WIDTH, PCT);
+    mainLayoutPanel.setWidgetTopHeight(sidePanel, NAVIGBAR_HEIGHT, PCT, height, PCT);
+    mainLayoutPanel.setWidgetRightWidth(sidePanel, 0, PCT, SIDE_WIDTH, PCT);
+    mainLayoutPanel.animate(500);
   }
 
 	public void setProfExpLayout() {
@@ -91,6 +102,7 @@ public class MobileDemoShellImpl implements DemoShell {
     int height = 100 - NAVIGBAR_HEIGHT;
     mainLayoutPanel.setWidgetTopHeight(navigBarPanel, 0, PCT, NAVIGBAR_HEIGHT, PCT);
     mainLayoutPanel.setWidgetTopHeight(mainPanel, NAVIGBAR_HEIGHT, PCT, height, PCT);
+    mainLayoutPanel.setWidgetRightWidth(sidePanel, 0, PCT, 0, PCT);
     mainLayoutPanel.animate(500);
   }
 

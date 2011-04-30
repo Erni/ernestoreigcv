@@ -46,7 +46,6 @@ public class DemoShellImpl implements DemoShell {
 	public DemoShellImpl(MainMenuViewImpl mainMenu) {
     this.mainMenu = mainMenu;
 		mainLayoutPanel = uiBinder.createAndBindUi(this);
-//		setCareerOverviewLayout();
 	}
 
 	public LayoutPanel getMainLayoutPanel() {
@@ -192,8 +191,15 @@ public class DemoShellImpl implements DemoShell {
   }
 
 	public void setDefaultLayout() {
-	  // TODO Auto-generated method stub
-	  
+    int height = 100 - MAINMENU_HEIGHT;
+    mainLayoutPanel.setWidgetTopHeight(titlePanel, 0, PCT, TITLE_HEIGHT, PCT);
+    mainLayoutPanel.setWidgetTopHeight(menuPanel, TITLE_HEIGHT, PCT, MAINMENU_HEIGHT, PCT);
+    mainLayoutPanel.setWidgetTopHeight(masterHorizontalPanel, 0, PCT, 0, PCT);
+    mainLayoutPanel.setWidgetTopHeight(vertLeftPanel, 0, PCT, 0, PCT);
+    mainLayoutPanel.setWidgetRightWidth(vertRightPanel, 0, PCT, 0, PCT);
+    mainLayoutPanel.setWidgetTopHeight(mainPanel, TITLE_HEIGHT + MAINMENU_HEIGHT, PCT, height, PCT);
+    mainLayoutPanel.setWidgetLeftWidth(mainPanel, 0, PCT, 100, PCT);
+    mainLayoutPanel.animate(500);
   }
 
 }

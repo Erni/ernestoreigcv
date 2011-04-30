@@ -14,8 +14,12 @@ public class MobileActivityManagerInitializer {
 
   @Inject
   public MobileActivityManagerInitializer(DemoShell shell,
-                                    @Named("MainContentRegion") ActivityManager mainContentActivityManager) {
+                                    @Named("MainContentRegion") ActivityManager mainContentActivityManager,
+                                    @Named("HorizontalMasterRegion") ActivityManager hmasterContentActivityManager,
+                                    @Named("SideContainerRegion") ActivityManager sideContentActivityManager) {
     mainContentActivityManager.setDisplay(shell.getMainContainer());
+    hmasterContentActivityManager.setDisplay(shell.getHorizontalMasterContainer());
+    sideContentActivityManager.setDisplay(shell.getSideContainer());
   }
 
 }
